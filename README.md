@@ -1,4 +1,4 @@
-Simal Labs Soccer League Application
+##Simal Labs Soccer League Application
 Project Overview
 The Simal Labs Soccer League Application is a comprehensive platform designed to streamline the management of soccer leagues. This full-stack application provides functionality for team and player registration, match scheduling, results reporting, financial management, and more, all within a secure and user-friendly environment. The application is accessible on both web and mobile platforms, ensuring users can manage their league-related tasks anytime, anywhere.
 
