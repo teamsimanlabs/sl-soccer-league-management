@@ -1,4 +1,4 @@
-package com.siman.labs.soccerleaguemanagement.model;
+package com.siman.labs.soccerleaguemanagement.entity;
 
 import com.siman.labs.soccerleaguemanagement.enums.Role;
 import jakarta.persistence.*;
@@ -23,10 +23,15 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "user_name")
     private String userName;
+    @Column(name = "password")
     private String password;
+    @Column(name = "roles")
     @Enumerated(EnumType.STRING)
     private Role role;
     @Override
