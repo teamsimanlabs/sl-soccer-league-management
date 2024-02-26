@@ -1,27 +1,21 @@
 spring:
   jpa:
-    # Provide database platform that is being used
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      # New database is created when app starts and destroyed when app stops
-      ddl-auto: create-drop
-    # Show sql when spring data jpa performs query
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
-        # Format queries
         format_sql: true
     defer-datasource-initialization: true
   datasource:
-    # URL connection to database (spring-security is database name)
-    url: jdbc:h2:mem:spring-security
-    # H2 SQL driver dependency
-    driver-class-name: org.h2.Driver
-    username: root
-    password: 12345
+    url: jdbc:postgresql://localhost:5432/soccer_league
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres1
   h2:
     console:
-      enabled: true
+      enabled: false
 token:
   signing:
     key: 413F4428472B4B6250655368566D5970337336763979244226452948404D6351

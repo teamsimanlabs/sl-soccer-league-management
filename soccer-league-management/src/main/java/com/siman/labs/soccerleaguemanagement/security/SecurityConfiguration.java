@@ -40,16 +40,15 @@ public class SecurityConfiguration {
 
     @Bean
     @Order(2)
-    SecurityFilterChain h2ConsoleSecurityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain h2ConsoleSecurityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .securityMatcher(AntPathRequestMatcher.antMatcher("/h2-console/**"))
-                .authorizeHttpRequests( auth -> {
-                    auth.requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll();
-                })
+                .authorizeHttpRequests(auth -> auth.requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll())
                 .csrf(csrf -> csrf.ignoringRequestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")))
                 .headers(headers -> headers.frameOptions().disable())
                 .build();
     }
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -63,10 +62,8 @@ public class SecurityConfiguration {
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }
-
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration config)
-            throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
 }
