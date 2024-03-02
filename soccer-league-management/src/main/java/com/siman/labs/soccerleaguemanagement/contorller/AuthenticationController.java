@@ -1,4 +1,4 @@
-package com.siman.labs.soccerleaguemanagement.contorller;
+package com.siman.labs.soccerleaguemanagement.controller;
 
 import com.siman.labs.soccerleaguemanagement.model.JwtAuthenticationResponse;
 import com.siman.labs.soccerleaguemanagement.model.SignUpRequest;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 
 import lombok.RequiredArgsConstructor;
 
