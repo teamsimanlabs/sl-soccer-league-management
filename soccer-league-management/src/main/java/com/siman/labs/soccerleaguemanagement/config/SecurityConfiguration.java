@@ -1,5 +1,4 @@
 package com.siman.labs.soccerleaguemanagement.config;
-
 import com.siman.labs.soccerleaguemanagement.security.JwtAuthenticationFilter;
 import com.siman.labs.soccerleaguemanagement.service.UserService;
 import lombok.RequiredArgsConstructor;
