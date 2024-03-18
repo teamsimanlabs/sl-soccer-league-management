@@ -1,6 +1,6 @@
 package com.siman.labs.soccerleaguemanagement.service;
 
-import com.siman.labs.soccerleaguemanagement.model.User;
+import com.siman.labs.soccerleaguemanagement.entity.User;
 import com.siman.labs.soccerleaguemanagement.repo.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;

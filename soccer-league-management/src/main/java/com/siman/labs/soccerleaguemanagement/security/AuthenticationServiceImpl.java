@@ -4,7 +4,7 @@ import com.siman.labs.soccerleaguemanagement.enums.Role;
 import com.siman.labs.soccerleaguemanagement.model.JwtAuthenticationResponse;
 import com.siman.labs.soccerleaguemanagement.model.SignUpRequest;
 import com.siman.labs.soccerleaguemanagement.model.SigninRequest;
-import com.siman.labs.soccerleaguemanagement.model.User;
+import com.siman.labs.soccerleaguemanagement.entity.User;
 import com.siman.labs.soccerleaguemanagement.repo.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;

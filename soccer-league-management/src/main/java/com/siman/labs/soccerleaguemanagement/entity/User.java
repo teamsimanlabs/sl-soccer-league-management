@@ -19,30 +19,27 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_user")
+@Table(name = "users")
 public class User implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "first_name")
-    private String firstName;
-    @Column(name = "last_name")
-    private String lastName;
-    @Column(name = "user_name")
-    private String userName;
-    @Column(name = "password")
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
     private String password;
-    @Column(name = "roles")
+
     @Enumerated(EnumType.STRING)
     private Role role;
-    
-//    private LocalDateTime createTimeStamp;//// TODO: 2/24/2024 implement this from the data model  
-//    
-//    private LocalDateTime updateTimeStamp;
-    
-    
-    
-    
+
+    @Column(name = "CreatedAt", nullable = false, columnDefinition = "TIMESTAMP")
+    private LocalDateTime createdAt;
+
+    @Column(name = "UpdatedAt", nullable = false, columnDefinition = "TIMESTAMP")
+    private LocalDateTime updatedAt;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
@@ -50,8 +47,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        // email in our case
-        return userName;
+        return email;
     }
 
     @Override
